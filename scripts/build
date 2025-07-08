@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mkdir -p ./out
+rojo build --output ./out/bindable-event-wrapper.rbxm default.project.json

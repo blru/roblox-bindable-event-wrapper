@@ -1,0 +1,11 @@
+title = "BindableEventWrapper"
+gitRepoUrl = "https://github.com/blru/roblox-bindable-event-wrapper"
+gitSourceBranch = "main"
+changelog = false
+
+[home]
+enabled = false
+includeReadme = false
+
+[docusaurus]
+tagline = "A wrapper around a BindableEvent"
