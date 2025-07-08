@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[532],{7676:e=>{e.exports=JSON.parse('[{"type":"link","href":"/api/BindableEventWrapper","label":"\u200bBindable\u200bEvent\u200bWrapper"}]')}}]);

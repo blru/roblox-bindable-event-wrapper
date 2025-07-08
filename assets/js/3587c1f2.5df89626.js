@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[96],{4410:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/blru/roblox-bindable-event-wrapper/blob/main","baseUrl":"/roblox-bindable-event-wrapper/","classOrder":[],"apiCategories":[]}')}}]);
