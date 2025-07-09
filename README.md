@@ -1,4 +1,4 @@
-# BindableEventWrapper
+# Bindable Event Wrapper
 
 A BindableEventWrapper is an object that wraps a [BindableEvent](https://create.roblox.com/docs/reference/engine/classes/BindableEvent) and provides an API similar to that of normal signal libraries.
 
@@ -18,7 +18,7 @@ end)
 foodConsumed:Fire(someone, "carrot")
 ```
 
-For more information, refer to the [documentation](http://blru.github.io/roblox-bindable-event-wrapper/api/BindableEventWrapper).
+For more information, refer to the [**documentation**](http://blru.github.io/roblox-bindable-event-wrapper/api/BindableEventWrapper).
 
 ## Why use this?
 
