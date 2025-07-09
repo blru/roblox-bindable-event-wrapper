@@ -6,11 +6,11 @@
     ```lua
     local roundEnded = BindableEventWrapper.new()
 
-    foodEaten:Connect(function(winner)
+    roundEnded:Connect(function(winner)
         print(winner .. " won the round!")
     end)
 
-    foodEaten:Fire("Jerry")
+    roundedEnded:Fire("Jerry")
     ```
 
     @class BindableEventWrapper
@@ -18,12 +18,15 @@
 local BindableEventWrapper = {}
 BindableEventWrapper.__index = BindableEventWrapper
 
-type BindableEventWrapper = typeof(setmetatable({} :: {}, BindableEventWrapper))
+type BindableEventWrapper = typeof(setmetatable(
+	{} :: { _inner: BindableEvent },
+	BindableEventWrapper
+))
 
 --[=[
     The underlying bindable event used by the class
 
-    @prop _internal BindableEvent
+    @prop _inner BindableEvent
     @private
     @within BindableEventWrapper
 ]=]
