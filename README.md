@@ -26,5 +26,4 @@ Uh..
 
 > "Your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should."
 
-Realistically, it is oftentimes better to use an actual signal implementation, such as [FastSignal](https://github.com/RBLXUtils/FastSignal), especially if you want to get around the [limitations](https://create.roblox.com/docs/scripting/events/bindable#argument-limitations) imposed by traditional BindableEvents.
-
+Realistically, it is oftentimes better to use an actual signal implementation, such as [RbxUtil's Signal](https://sleitnick.github.io/RbxUtil/api/Signal) or [FastSignal](https://github.com/RBLXUtils/FastSignal), especially if you want to get around the [limitations](https://create.roblox.com/docs/scripting/events/bindable#argument-limitations) imposed by traditional BindableEvents.

@@ -1,6 +1,4 @@
 --[=[
-    @class BindableEventWrapper
-
     A wrapper around a [BindableEvent] that exposes a similar API to that of a normal signal library.
 
     Please note that this has the same [limitations](https://create.roblox.com/docs/scripting/events/bindable#argument-limitations) as a regular BindableEvent.
@@ -14,6 +12,8 @@
 
     foodEaten:Fire("Jerry")
     ```
+
+    @class BindableEventWrapper
 ]=]
 local BindableEventWrapper = {}
 BindableEventWrapper.__index = BindableEventWrapper
@@ -21,18 +21,18 @@ BindableEventWrapper.__index = BindableEventWrapper
 type BindableEventWrapper = typeof(setmetatable({} :: {}, BindableEventWrapper))
 
 --[=[
+    The underlying bindable event used by the class
+
     @prop _internal BindableEvent
     @private
     @within BindableEventWrapper
-
-    The underlying bindable event used by the class
 ]=]
 
 --[=[
+    Instantiates a new BindableEventWrapper.
+
     @within BindableEventWrapper
     @param event BindableEvent? -- If this is not nil, the wrapper will wrap the provided [BindableEvent] instead of creating a new one.
-
-    Instantiates a new BindableEventWrapper.
 ]=]
 function BindableEventWrapper.new(event: BindableEvent?)
 	assert(
@@ -55,22 +55,22 @@ function BindableEventWrapper.new(event: BindableEvent?)
 end
 
 --[=[
-    @within BindableEventWrapper
-
     Fires the internal [BindableEvent].
 
     See [BindableEvent:Fire]
+
+    @within BindableEventWrapper
 ]=]
 function BindableEventWrapper.Fire(self: BindableEventWrapper, ...: any)
 	self._inner:Fire(...)
 end
 
 --[=[
-    @within BindableEventWrapper
-
-    Connects to the internal [BindableEvent's Event](https://create.roblox.com/docs/reference/engine/classes/BindableEvent#Event) and returns the [RBXScriptConnection](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) representing it.
+    Connects to the internal [BindableEvent's Event](https://create.roblox.com/docs/reference/engine/classes/BindableEvent#Event) and returns the [RBXScriptConnection] representing it.
 
     See [RBXScriptSignal:Connect]
+
+    @within BindableEventWrapper
 ]=]
 function BindableEventWrapper.Connect(
 	self: BindableEventWrapper,
@@ -80,9 +80,9 @@ function BindableEventWrapper.Connect(
 end
 
 --[=[
-    @within BindableEventWrapper
-
     See [RBXScriptSignal:ConnectParallel]
+
+    @within BindableEventWrapper
 ]=]
 function BindableEventWrapper.ConnectParallel(
 	self: BindableEventWrapper,
@@ -92,11 +92,11 @@ function BindableEventWrapper.ConnectParallel(
 end
 
 --[=[
-    @within BindableEventWrapper
-
-    Connects to the [internal BindableEvent's Event](https://create.roblox.com/docs/reference/engine/classes/BindableEvent#Event) such that the connection is disconnected after the first event is delivered. Returns the [RBXScriptConnection](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) representing the connection.
+    Connects to the internal [BindableEvent's Event](https://create.roblox.com/docs/reference/engine/classes/BindableEvent#Event) such that the connection is disconnected after the first event is delivered. Returns the [RBXScriptConnection](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) representing the connection.
 
     See [RBXScriptSignal:Once]
+
+    @within BindableEventWrapper
 ]=]
 function BindableEventWrapper.Once(
 	self: BindableEventWrapper,
@@ -106,12 +106,12 @@ function BindableEventWrapper.Once(
 end
 
 --[=[
-    @within BindableEventWrapper
-    @yields
-
     Yields until the internal [BindableEvent's Event](https://create.roblox.com/docs/reference/engine/classes/BindableEvent#Event) fires. Returns the arguments provided by the signal.
 
     See [RBXScriptSignal:Wait]
+
+    @within BindableEventWrapper
+    @yields
 ]=]
 function BindableEventWrapper.Wait(self: BindableEventWrapper): ...any
 	return self._inner.Event:Wait()
