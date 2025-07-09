@@ -1,4 +1,5 @@
 name: main
+on: workflow_dispatch
 jobs:
     status:
         runs-on: ubuntu-latest
